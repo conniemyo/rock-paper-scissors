@@ -24,19 +24,22 @@ const game = () => {
           this.style.animation = "";
         });
     });
-    
+
       const computerOptions = ["rock", "paper", "scissors"];
   
       options.forEach(option => {
         option.addEventListener("click", function() {
+
           const computerNumber = Math.floor(Math.random() * 3);
           const computerChoice = computerOptions[computerNumber];
   
           setTimeout(() => {
             compareHands(this.textContent, computerChoice);
+
             playerHand.src = `./assets/${this.textContent}.png`;
             computerHand.src = `./assets/${computerChoice}.png`;
           }, 2000);
+          
           playerHand.style.animation = "shakePlayer 2s ease";
           computerHand.style.animation = "shakeComputer 2s ease";
         });
